@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function maiormenor(){
+var a = parseInt(document.getElementById('amm').value);
+var b = parseInt(document.getElementById('bmm').value);
+var c = parseInt(document.getElementById('cmm').value);
+var d = parseInt(document.getElementById('dmm').value);
+var e = parseInt(document.getElementById('emm').value);
+var maior, menor;
+if (a >= b && a >= c && a >= d && a >= e ) {
+  maior = a;
+}
+if (b >= a && b >= c && b >= d && b >= e ) {
+  maior = b;
+}
+if (c >= b && c >= a && c >= d && c >= e ) {
+  maior = c;
+}
+if (d >= b && d >= c && d >= a && d >= e ) {
+  maior = d;
+}
+if (e >= b && e >= c && e >= d && e >= a ) {
+  maior = e;
+}
+if (a <= b && a <= c && a <= d && a <= e ) {
+  menor = a;
+}
+if (b <= a && b <= c && b <= d && b <= e ) {
+  menor = b;
+}
+if (c <= b && c <= a && c <= d && c <= e ) {
+  menor = c;
+}
+if (d <= b && d <= c && d <= a && d <= e ) {
+  menor = d;
+}
+if (e <= b && e <= c && e <= d && e <= a ) {
+  menor = e;
+}
+    
+document.getElementById("demoa").innerHTML = "Maior número: " + maior;
+document.getElementById("demoe").innerHTML = "Menor número: " + menor + "              ";
+
+}
+function vogal(){
+var v = (document.getElementById('vog').value);
+var analise;
+if (v == "a" || v == "e" || v == "i" || v == "o" || v == "u") {
+  analise = 1;
+} else {
+  analise = 0;
+}
+    
+document.getElementById("demov").innerHTML = analise;
+}
+
+function limit(){
+var inf = parseInt(document.getElementById('li').value);
+var sup = parseInt(document.getElementById('ls').value);
+var text = "", som = 0
+for (let i = inf; i <= sup; i++) {
+  text += i + " ";
+  som = som + i
+}
+    
+document.getElementById("demol").innerHTML = text;
+document.getElementById("demos").innerHTML = "Somatório: " + som;
+
+}
+
+function ordenar(){
+var n1 = parseInt(document.getElementById('n1').value);
+var n2 = parseInt(document.getElementById('n2').value);
+var n3 = parseInt(document.getElementById('n3').value);
+let text1 = "";
+if (n1 >= n2 && n2>= n3 ) {
+  text1 = n3 + " " + n2 + " " + n1;
+} 
+if (n1 >= n2 && n2 <= n3 ) {
+  text1 = n2 + " " + n3 + " " + n1;
+} 
+if (n1 <= n2 && n1>= n3 ) {
+  text1 = n3 + " " + n1 + " " + n2;
+} 
+if (n1 <= n2 && n1<= n3 ) {
+  text1 = n1 + " " + n3 + " " + n2;
+} 
+if (n1 >= n2 && n1<= n3 ) {
+  text1 = n2 + " " + n1 + " " + n3;
+} 
+if (n1 <= n2 && n2<= n3 ) {
+  text1 = n1 + " " + n2 + " " + n3;
+} 
+
+    
+document.getElementById("demoo").innerHTML = text1;
+}
+
+function PosNeg(){
+var x = (document.getElementById('sin').value); 
+document.getElementById("demopn").innerHTML = (x > 0);
+}
+
+function parimp(){
+var x = (document.getElementById('pi').value); 
+document.getElementById("demopi").innerHTML = (x % 2 == 0);
+}
+</script>
+</head>
+<body>
+
+<h2>Lista de Exercícios JS</h2>
+
+
+<form id="maioremenor" oninput="maiormenor()">
+  <fieldset>
+    <legend>Maior_Menor:</legend>
+    <label for="amm">a:</label><br>
+    <input type="text" id="amm" name="amm"><br>
+    <label for="bmm">b:</label><br>
+    <input type="text" id="bmm" name="bmm"><br>
+    <label for="cmm">c:</label><br>
+    <input type="text" id="cmm" name="cmm"><br>
+    <label for="dmm">d:</label><br>
+    <input type="text" id="dmm" name="dmm"><br> 
+    <label for="emm">e:</label><br>
+    <input type="text" id="emm" name="emm"><br>
+    <p id="demoa"></p>
+    <p id="demoe"></p><br>
+  </fieldset>
+</form>
+
+<form id="Vogal" oninput="vogal()">
+  <fieldset>
+    <legend>Vogal:</legend>
+    <label for="vog">c:</label><br>
+    <input type="text" id="vog" name="vog"><br>
+    <p id="demov"></p>
+  </fieldset>
+</form>
+
+<form id="limites" oninput="limit()">
+  <fieldset>
+    <legend>Limites:</legend>
+    <label for="li">li:</label><br>
+    <input type="text" id="li" name="li"><br>
+    <label for="ls">ls:</label><br>
+    <input type="text" id="ls" name="ls"><br>
+    <p id="demol"></p>
+    <p id="demos"></p><br>
+  </fieldset>
+</form>
+
+<form id="ordem" oninput="ordenar()">
+  <fieldset>
+    <legend>Ordem:</legend>
+    <label for="n1">a:</label><br>
+    <input type="text" id="n1" name="n1"><br>
+    <label for="n2">b:</label><br>
+    <input type="text" id="n2" name="n2"><br>
+    <label for="n3">c:</label><br>
+    <input type="text" id="n3" name="n3"><br>
+    <p id="demoo"></p>
+  </fieldset>
+</form>
+
+<form id="PosNeg" oninput="PosNeg()">
+  <fieldset>
+    <legend>Positivo_Negativo:</legend>
+    <label for="sin">x:</label><br>
+    <input type="text" id="sin" name="sin"><br>
+    <p id="demopn"></p>
+  </fieldset>
+</form>
+
+<form id="ParImp" oninput="parimp()">
+  <fieldset>
+    <legend>Par_Impar:</legend>
+    <label for="pi">x:</label><br>
+    <input type="text" id="pi" name="pi"><br>
+    <p id="demopi"></p>
+  </fieldset>
+</form>
+
+</body>
+</html>
