@@ -1,188 +1,258 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<script>
-function maiormenor(){
-var a = parseInt(document.getElementById('amm').value);
-var b = parseInt(document.getElementById('bmm').value);
-var c = parseInt(document.getElementById('cmm').value);
-var d = parseInt(document.getElementById('dmm').value);
-var e = parseInt(document.getElementById('emm').value);
-var maior, menor;
-if (a >= b && a >= c && a >= d && a >= e ) {
-  maior = a;
-}
-if (b >= a && b >= c && b >= d && b >= e ) {
-  maior = b;
-}
-if (c >= b && c >= a && c >= d && c >= e ) {
-  maior = c;
-}
-if (d >= b && d >= c && d >= a && d >= e ) {
-  maior = d;
-}
-if (e >= b && e >= c && e >= d && e >= a ) {
-  maior = e;
-}
-if (a <= b && a <= c && a <= d && a <= e ) {
-  menor = a;
-}
-if (b <= a && b <= c && b <= d && b <= e ) {
-  menor = b;
-}
-if (c <= b && c <= a && c <= d && c <= e ) {
-  menor = c;
-}
-if (d <= b && d <= c && d <= a && d <= e ) {
-  menor = d;
-}
-if (e <= b && e <= c && e <= d && e <= a ) {
-  menor = e;
-}
-    
-document.getElementById("demoa").innerHTML = "Maior número: " + maior;
-document.getElementById("demoe").innerHTML = "Menor número: " + menor + "              ";
-
-}
-function vogal(){
-var v = (document.getElementById('vog').value);
-var analise;
-if (v == "a" || v == "e" || v == "i" || v == "o" || v == "u") {
-  analise = 1;
-} else {
-  analise = 0;
-}
-    
-document.getElementById("demov").innerHTML = analise;
+<title>Quem é mais rápido?</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style> 
+* {
+  box-sizing: border-box;
 }
 
-function limit(){
-var inf = parseInt(document.getElementById('li').value);
-var sup = parseInt(document.getElementById('ls').value);
-var text = "", som = 0
-for (let i = inf; i <= sup; i++) {
-  text += i + " ";
-  som = som + i
-}
-    
-document.getElementById("demol").innerHTML = text;
-document.getElementById("demos").innerHTML = "Somatório: " + som;
-
+body {
+  margin: 0;
 }
 
-function ordenar(){
-var n1 = parseInt(document.getElementById('n1').value);
-var n2 = parseInt(document.getElementById('n2').value);
-var n3 = parseInt(document.getElementById('n3').value);
-let text1 = "";
-if (n1 >= n2 && n2>= n3 ) {
-  text1 = n3 + " " + n2 + " " + n1;
-} 
-if (n1 >= n2 && n2 <= n3 ) {
-  text1 = n2 + " " + n3 + " " + n1;
-} 
-if (n1 <= n2 && n1>= n3 ) {
-  text1 = n3 + " " + n1 + " " + n2;
-} 
-if (n1 <= n2 && n1<= n3 ) {
-  text1 = n1 + " " + n3 + " " + n2;
-} 
-if (n1 >= n2 && n1<= n3 ) {
-  text1 = n2 + " " + n1 + " " + n3;
-} 
-if (n1 <= n2 && n2<= n3 ) {
-  text1 = n1 + " " + n2 + " " + n3;
-} 
-
-    
-document.getElementById("demoo").innerHTML = text1;
+/* Style the header */
+.header {
+  background-color: #696969;
+  padding: 5px 20px;
+  text-align: center;
+}
+.suge {
+  position: absolute;
+  left: 0px;
+  width: 250px;
+  border: 1px solid black;
+  padding: 10px;
+  background-color:#696969
+  
 }
 
-function PosNeg(){
-var x = (document.getElementById('sin').value); 
-document.getElementById("demopn").innerHTML = (x > 0);
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
 }
 
-function parimp(){
-var x = (document.getElementById('pi').value); 
-document.getElementById("demopi").innerHTML = (x % 2 == 0);
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
-</script>
+
+/* Responsive layout */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+/* Background image */
+html { 
+  background: url(https://cdn.pixabay.com/photo/2017/08/24/21/41/tartan-track-2678544_960_720.jpg) no-repeat center fixed; 
+  background-size: cover;
+}
+
+body { 
+  color: white; 
+}
+span{
+  font-size:150%;
+  color:white;
+}
+/* Animations */
+.anima{
+  display:inline-block;
+  width: 1px;
+  height: 25px;
+  background-color: red;
+  animation-name: example;
+  animation-fill-mode: forwards;
+}
+#div1{animation-duration: 3s;}
+#div2{animation-duration: 3.025s;}
+#div3{animation-duration: 4.5s;}
+#div4{animation-duration: 36s;}
+#div5{animation-duration: 3.364s;}
+#div6{animation-duration: 3.13s;}
+#div7{animation-duration: 4.5s;}
+#div8{animation-duration: 3.78s;}
+#div9{animation-duration: 9.58s;}
+#div10{animation-duration: 7.91s;}
+#div11{animation-duration: 1.125s;}
+#div12{animation-duration: 1.2s;}
+#div13{animation-duration: 2.13s;}
+#div14{animation-duration: 4.94s;}
+#div15{animation-duration: 9.83s;}
+@keyframes example {
+  0%   {width:1px;}
+  100% {width:170px;}
+}
+a {
+  color: white;
+}
+pre{
+  color:black;
+}  
+button.static{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+
+
+}  
+form{
+  position: static;
+  bottom: 30px;
+  right: 20px;
+  
+}  
+</style>
 </head>
 <body>
+<div class="header">
+  <h1>Quem é mais rápido?</h1>
+</div>
 
-<h2>Lista de Exercícios JS</h2>
+<div class="row">
+  <div class="column">
+    <span style="background-color:#0e90ad;">Corrida Maritima</span><br><br>
+    <div class ="anima" id="div1" style="font-size:80%"><a href="https://pt.wikipedia.org/wiki/Marlim-preto"  target="_blank">Marlim-preto</a></div>
+    <pre>0m                     100m</pre> 
+    <div class ="anima" id="div2" style="font-size:80%"><a href="https://pt.wikipedia.org/wiki/Istiophorus" target="_blank">Peixe-vela</a></div>
+    <pre>0m                     100m</pre> 
+    <div class ="anima" id="div3" style="font-size:80%"><a href="https://pt.wikipedia.org/wiki/Marlim" target="_blank">Marlim-listrado</a></div>
+    <pre>0m                     100m</pre> 
+    <div class ="anima" id="div4" style="font-size:80%"><a href="https://pt.wikipedia.org/wiki/Michael_Phelps" target="_blank">Nadador Profissional</a></div>
+    <pre>0m                     100m</pre> 
+    <div class ="anima" id="div5" style="font-size:80%"><a href="https://en.wikipedia.org/wiki/HSC_Francisco" target="_blank">HSC Francisco</a></div>
+    <pre>0m                     100m</pre> 
+  </div>
+  
+  <div class="column">
+    <span style="background-color:#ff4500;">Corrida Terrestre</span><br><br>
+    <div class ="anima" id="div6"><a href="https://pt.wikipedia.org/wiki/Acinonyx_jubatus" target="_blank">Guepardo</a></div>
+    <pre>0m                     100m</pre> 
+    <div class ="anima" id="div7"><a href="https://pt.wikipedia.org/wiki/Antilocapra" target="_blank">Antilocapra</a></div>
+    <pre>0m                     100m</pre> 
+    <div class ="anima" id="div8"><a href="https://pt.wikipedia.org/wiki/Gazela-de-thomson" target="_blank">Gazela-de-thompson</a></div>
+    <pre>0m                     100m</pre> 
+    <div class ="anima" id="div9"><a href="https://pt.wikipedia.org/wiki/Usain_Bolt" target="_blank">Usain Bolt</a></div>
+    <pre>0m                     100m</pre> 
+    <div class ="anima" id="div10"><a href="https://revistacarro.com.br/ssc-tuatara-alcanca-455-km-h-e-mantem-recorde-de-velocidade/" target="_blank">SSC Tuatara</a></div>
+    <pre>0m                     1km</pre> 
+ 
+  </div>
+  
+  <div class="column">
+    <span style="background-color:#00BFFF;">Corrida Aérea</span><br><br>
+    <div class ="anima" id="div11"><a href="https://pt.wikipedia.org/wiki/Falc%C3%A3o-peregrino" target="_blank">Falcão Peregrino</a></div>
+    <pre>0m                     100m</pre> 
+    <div class ="anima" id="div12"><a href="https://pt.wikipedia.org/wiki/%C3%81guia-real" target="_blank">Águia-Real</a></div>
+    <pre>0m                     100m</pre> 
+    <div class ="anima" id="div13"><a href="https://pt.wikipedia.org/wiki/Andorinh%C3%A3o-real" target="_blank">Andorinhão-Real</a></div>
+    <pre>0m                     100m</pre> 
+    <div class ="anima" id="div14"><a href="https://pt.wikipedia.org/wiki/North_American_X-15" target="_blank">North American X-15</a></div>
+    <pre>0m                     10km</pre> 
+    <div class ="anima" id="div15"><a href="https://pt.wikipedia.org/wiki/Lockheed_YF-12" target="_blank">Lockheed YF-12</a></div>
+    <pre>0m                     10km</pre> 
 
+  </div>
+</div>
+<script>
+function myFunction() {
+  var element = document.getElementById("div1"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div2"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div3"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div4"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div5"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div6"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div7"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div8"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div9"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div10"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div11"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div12"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div13"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div14"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+  var element = document.getElementById("div15"); 
+  element.classList.remove("anima"); 
+  void element.offsetWidth; 
+  element.classList.add("anima");
+ 
+}
+function Enviar() {
 
-<form id="maioremenor" oninput="maiormenor()">
-  <fieldset>
-    <legend>Maior_Menor:</legend>
-    <label for="amm">a:</label><br>
-    <input type="text" id="amm" name="amm"><br>
-    <label for="bmm">b:</label><br>
-    <input type="text" id="bmm" name="bmm"><br>
-    <label for="cmm">c:</label><br>
-    <input type="text" id="cmm" name="cmm"><br>
-    <label for="dmm">d:</label><br>
-    <input type="text" id="dmm" name="dmm"><br> 
-    <label for="emm">e:</label><br>
-    <input type="text" id="emm" name="emm"><br>
-    <p id="demoa"></p>
-    <p id="demoe"></p><br>
-  </fieldset>
-</form>
+    var cor = document.getElementById("nc");
+    var par = document.getElementById("np");
+    if (cor.value != "" && par.value != "") {
+        alert('Obrigado pelas sugestões!');
+    }else {
+        alert('Por favor preencha ambas sugestões antes de enviar.');
+        return false;
+    }
 
-<form id="Vogal" oninput="vogal()">
-  <fieldset>
-    <legend>Vogal:</legend>
-    <label for="vog">c:</label><br>
-    <input type="text" id="vog" name="vog"><br>
-    <p id="demov"></p>
-  </fieldset>
-</form>
+}
+</script>
+<button class="static" onclick="myFunction()">Restart</button><br>
+<div class ="suge">
+<form name="meu_form">
 
-<form id="limites" oninput="limit()">
-  <fieldset>
-    <legend>Limites:</legend>
-    <label for="li">li:</label><br>
-    <input type="text" id="li" name="li"><br>
-    <label for="ls">ls:</label><br>
-    <input type="text" id="ls" name="ls"><br>
-    <p id="demol"></p>
-    <p id="demos"></p><br>
-  </fieldset>
-</form>
+      <h2>Sugestões</h2>
+      <label for="nome">Novas Corridas:</label> 
+      <input type="text" id="nc" required="required" name="corridas" />
+      <br>
+      <label for="fone">Novos participantes:</label>
+      <input type="tel" id="np" required="required" name="participantes" /><br>
+      <input type="submit" class="enviar" onclick="Enviar();" value="Enviar" />
+    </form> 
+</div>    
 
-<form id="ordem" oninput="ordenar()">
-  <fieldset>
-    <legend>Ordem:</legend>
-    <label for="n1">a:</label><br>
-    <input type="text" id="n1" name="n1"><br>
-    <label for="n2">b:</label><br>
-    <input type="text" id="n2" name="n2"><br>
-    <label for="n3">c:</label><br>
-    <input type="text" id="n3" name="n3"><br>
-    <p id="demoo"></p>
-  </fieldset>
-</form>
-
-<form id="PosNeg" oninput="PosNeg()">
-  <fieldset>
-    <legend>Positivo_Negativo:</legend>
-    <label for="sin">x:</label><br>
-    <input type="text" id="sin" name="sin"><br>
-    <p id="demopn"></p>
-  </fieldset>
-</form>
-
-<form id="ParImp" oninput="parimp()">
-  <fieldset>
-    <legend>Par_Impar:</legend>
-    <label for="pi">x:</label><br>
-    <input type="text" id="pi" name="pi"><br>
-    <p id="demopi"></p>
-  </fieldset>
-</form>
 
 </body>
 </html>
